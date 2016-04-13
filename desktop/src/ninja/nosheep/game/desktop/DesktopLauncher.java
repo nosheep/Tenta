@@ -2,6 +2,7 @@ package ninja.nosheep.game.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import ninja.nosheep.client.Patcher;
 import ninja.nosheep.game.MainController;
 
 public class DesktopLauncher {
@@ -10,9 +11,11 @@ public class DesktopLauncher {
 
 		config.title = "Tenta";
 		config.width = 1280;
-		config.height = config.height / 16 * 9;
+		config.height = config.width / 16 * 9;
 
-		// TODO: Run the patcher before launching the MainController
+		// TODO: Run patcher before launching the MainController
+			//Patcher patcher = new Patcher();
+			// while(!patcher.isFinished())
 
 		new LwjglApplication(new MainController(), config);
 	}
